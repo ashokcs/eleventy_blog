@@ -1,0 +1,36 @@
+body{
+    background: #90E0EF;
+}
+
+header{
+    background-color: rgb(34, 36, 199);
+    height: 60px;
+    max-width: 900px;
+    text-align: center;
+    color: white;
+    margin: auto;
+}
+
+h1{
+    color: white;
+    padding: 10px;
+}
+
+figure{
+    max-height: 400px;
+    align-items: center;
+    margin: auto;
+    max-width: 900px;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 10px 0;
+    height: 400px;
+}
+
+.main_content{
+    margin: 0 20px;
+}

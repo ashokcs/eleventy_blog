@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Microservice from Monolithic code</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1> Worker Microservice from Monolithic code </h1>
+    </header>
+
+    <figure>
+        <img src="/img/microservice.jpeg" alt="/img/microservice.jpeg" style="width:900px; height:400px">
+    </figure>
+    
+     <main>
+        <div class="main_content">
+            
+<article>
+    <h2>This story is all about the creation of TWO Microservices that were extracted from the Monolithic System.</h2>
+<p>Domain: Online Bill Payment / Financial</p>
+<p><strong>Tech Spec: Java, Spring Boot, PostgreSql, Redis, Kafka, Azure</strong></p>
+<p>Whenever there is a repetitive work happening in any System, the idea of modularization should be implemented. The same thing happened in the project that I have been working on. I proposed this idea to my team with POC and felt heard, when the team and my boss appreciated my idea.</p>
+<p>Happily took my first step for this little milestone. There are many places in the monolithic system project calling the External Broker Service for the below needs:</p>
+<p>To fetch Bill details</p>
+<p>Company details that the bills were paid for.
+Paying the Bill through Integrated service.
+Confirming the Bill Payment.
+Also there are other microservices that are calling these apis from many places directly to the Broker Service. I created the Worker/External Utility service that receives Internal http calls from these local services and makes External https calls to External Broker Service.</p>
+
+</article> 
+        </div>
+    </main> 
+</body>
+</html>

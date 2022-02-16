@@ -1,0 +1,22 @@
+{
+  "name": "Assignment1",
+  "version": "1.0.0",
+  "description": "eleventy blogs",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --input=src --serve",
+    "build": "npx @11ty/eleventy --input=src"
+  },
+  "keywords": [
+    "eleventy",
+    "blog",
+    "sample",
+    "development",
+    "webclient"
+  ],
+  "author": "Ashokchakravarthi Nagarajan",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}
