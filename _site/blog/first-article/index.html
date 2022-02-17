@@ -20,15 +20,13 @@
         <div class="main_content">
             
 <article>
-    <h2>Secret way for Unprivileged user to see all Corporate Card transactions through a vulnerable api.</h2>
+    <h2>Unprivileged users were able to access the Corporate Card transactions.</h2>
 OWASP Category: IDOR <a href="https://portswigger.net/web-security/access-control/idor">IDOR OWASP </a>
-<p>There is a famous Expense reporting app for Corporates and Enterprises. It had an api
-https://expense.company.com/api/v1/banks</p>
-<p>that gives the list of banks associated to the particular organization. It also had a parameter called entity which was the gateway to the vulnerability that I found.</p>
-<p>The typical value of the entity parameter was bank. I checked the same api with the param value card. It worked!! I successfully retried the list of card ids related to the Corporate account. Still one more way to complete the hack. We haven’t seen the list of transactions for the unprivileged the user like me.</p>
-<p>I completely scanned the application for the particular api. With tired less analysis and hardwork I finally found the api.
-https://expense.company.com/api/v1/transactions?account_id={card_id}
-It gives me the list of corporate expenses that I was not supposed to view. That left the Company transactions exposed to simple staff user. Hard work paid off in form of bounty.</p>
+<p>Its a famous Expense reporting app for Corporates and Enterprises. Which had an api https://exp.company.com/api/v1/banks that gives the list of integrated payment banks associated to the particular company. It also has a query string called entity which was the gateway to the vulnerability that I found.</p>
+<p>The general value of the entity query string was bank. I ensured the same api with the query striing value card. I nailed it!! I  fetched the list of card ids related to the Corporate account successfully. Still one more step to complete the hacking. We are yet to see the list of transactions for the unprivileged access the user like me.</p>
+<p>I thoroughly scanned the app access for the particular api. With tired less analysis and hardwork I finally found the api.
+https://exp.company.com/api/v1/trans?account_id={card_id}
+It shows me the list of expenses that I were not supposed to view, which means it left the Company transactions access to simple staff user. My hard work paid off in form of big bounty.</p>
 
 </article> 
         </div>

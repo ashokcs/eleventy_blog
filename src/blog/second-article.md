@@ -12,9 +12,14 @@ The Grand Issue:
 Customers are king!!, We have an entire Data Center started facing slowness occasionally. The slowness issue started piling up over a period of time. One fine day, later became worst day as many of the customers reported slowness.
 
 Phase by phase solution:
-Phase #1: (Quick & Immediate Solution)
-To the rescue I volunteered the operation to lead and work in field. Application server logs are just fine, except some locks timeout logged here and there. I came up with the idea of increasing the lock time bit more, with below configuration.
+Phase #1: (Quick and also Immediate Solution, but not cost effective.)
+To the rescue our team from the incident, I volunteered the operation to lead and work on the field. Application server logs were just fine, except some deadlock and timeout logged in some places. I came up with the idea of increasing the lock timout value a bit more, with below configuration.
+
 innodb_lock_wait_timeout=500
-which was 5 seconds of waiting time for the lock to release and acquire it.
-Good News!! The issues was temporarily solved. I knew it was not the permanent or Optimized solution. I started digging where is the real issue lies in code. In the Purchase Order (Module A) module flow, we have an option to create payments from bulk PO (Module A). The action dries up the MySql Thread Pool high by repeatedly calling DB read operations for the same Process Order (Module B) resources.
-With patience and Step by Step debugging I was able to find and reproduce the issue and I had planned for the fix. Caching to the Rescue.
+
+Meaning the 5 seconds of waiting time of the lock to release.
+
+Good News!! The issues was temporarily resolved for most of the requests . I knew it was not the proper fix and a permanent or Optimized solution. I started analysing where is the real issue lies in code. In the Purchase Order (AKA PO) in Module A module flow, we have an option to create Payment entity from bulk PO in Module A. The action made the up the MySql Thread Pool dry high by repeatedly calling Data Base read operations for the same Process Order (Module B) resources.
+With lot of patience and Step by Step analysing and debugging I was able to find and reproduce the issue and I had planned for the fix. Caching to the Rescue.
+
+Yes I cached most of the data in api callls, that permanently solved the issues. 
